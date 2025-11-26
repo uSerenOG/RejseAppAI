@@ -15,7 +15,6 @@ import {
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Fix default Leaflet icon paths so markers show correctly
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
@@ -26,8 +25,7 @@ L.Icon.Default.mergeOptions({
     'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
 });
 
-// This turns Leaflet map clicks into the same onPress event shape
-// that react-native-maps uses.
+// Gør at kortet kan håndtere klik ligesom i react-native-maps
 function ClickHandler({ onPress }) {
   useMapEvents({
     click(e) {
@@ -46,14 +44,14 @@ function ClickHandler({ onPress }) {
   return null;
 }
 
-// Web version of MapView
+// Web version af MapView
 const WebMapView = forwardRef(function WebMapView(
   { style, initialRegion, onPress, children },
   ref
 ) {
   const mapRef = useRef(null);
 
-  // Expose animateToRegion so your existing centerOnUser() works
+  // Gør animateToRegion tilgængelig, så eksisterende centerOnUser() fungerer
   useImperativeHandle(ref, () => ({
     animateToRegion(region) {
       if (!mapRef.current || !region) return;
@@ -70,7 +68,6 @@ const WebMapView = forwardRef(function WebMapView(
     ? [initialRegion.latitude, initialRegion.longitude]
     : [0, 0];
 
-  // Very rough zoom mapping from latitudeDelta
   const zoom = initialRegion
     ? Math.max(3, 16 - initialRegion.latitudeDelta * 50)
     : 3;
@@ -96,9 +93,9 @@ const WebMapView = forwardRef(function WebMapView(
   );
 });
 
-// Web version of Marker that tries to mimic react-native-maps Marker
+// Web version af Marker der prøver at efterligne react-native-maps Marker
 function Marker({ coordinate, draggable, onDragEnd }) {
-  const map = useMap(); // required so the marker is inside a map context
+  const map = useMap(); 
 
   const eventHandlers =
     draggable && onDragEnd
