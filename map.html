@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Rejseplanlægger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="controls">
+        <h3>Rejseplanlægger</h3>
+        <input type="text" id="start" placeholder="Startpunkt (f.eks. 'København')">
+        <input type="text" id="destination" placeholder="Destination (f.eks. 'Aarhus')">
+        <button onclick="findRoute()">Find Rute</button>
+        <button onclick="findMyLocation()">Find Min Placering</button>
+        <button onclick="getWeather()">Hent Vejr</button>
+        <div class="location-info" id="info" style="display: none;"></div>
+        
+        <!-- Vejr sektion -->
+        <div class="weather-info" id="weather" style="display: none;">
+            <h4>Vejr Information</h4>
+            <div id="weather-content"></div>
+        </div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="weather.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

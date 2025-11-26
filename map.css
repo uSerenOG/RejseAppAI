@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#map {
+    height: 100vh;
+    width: 100%;
+}
+
+.controls {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    z-index: 1000;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    max-width: 320px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.controls h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.controls input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.controls button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.controls button:hover {
+    background: #0056b3;
+}
+
+.location-info {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Vejr styling */
+.weather-info {
+    margin-top: 15px;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    color: white;
+}
+
+.weather-info h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#weather-content {
+    font-size: 14px;
+}
+
+.weather-main {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.weather-temp {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.weather-description {
+    font-size: 16px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.weather-detail {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.weather-detail-label {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.weather-detail-value {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.weather-icon {
+    font-size: 48px;
+    margin: 10px 0;
+}
